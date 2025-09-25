@@ -1,4 +1,8 @@
-text = 'Hej jag gillar korv'
-def tokenize(text):
+lines = ([' Hej jag gillar korv.'])
+def tokenize(lines):
+    text = ' '.join(lines).lower()
     return text.split()
-print(tokenize(text))
+print(tokenize(lines))
+
+    
+
