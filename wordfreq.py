@@ -42,3 +42,13 @@ def countWords(words, stopWords):
             continue                 
     return my_dict
 print(countWords(tokens, stopWords))
+def printTopmost(my_dict, n):
+    sorted_dict = dict(sorted(my_dict.items(),key=lambda item: item[1], reverse=True))
+    
+   
+    for i in range(n):
+        for k, v in sorted_dict.items():
+            print(k, v)
+my_dict = countWords(tokens, stopWords)
+n=2
+printTopmost(my_dict, n)
