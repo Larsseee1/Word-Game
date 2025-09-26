@@ -25,6 +25,7 @@ tokens = tokenize(my_list)
 with open('eng_stopwords.txt') as input_file:
     stopWords = input_file.readlines()
 
+
 def countWords(words, stopWords):
     my_dict={}
     ammount = 0
@@ -32,15 +33,13 @@ def countWords(words, stopWords):
     
     for i in words:
         ammount = 0
-        for o in stopWords:
-            if i + '\n' not in stopWords and ammount == 0:
-                for count in words:
-                    if i == count:
-                        ammount +=1
-                my_dict[i] = ammount           
-            else:
+        if i + '\n' not in stopWords and ammount == 0:
+            for count in words:
+                if i == count:
+                    ammount +=1
+            my_dict[i] = ammount           
+        else:
+            continue 
                 
-                break
     return my_dict
 print(countWords(tokens, stopWords))
-print(stopWords)
