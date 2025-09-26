@@ -33,13 +33,12 @@ def countWords(words, stopWords):
     
     for i in words:
         ammount = 0
-        if i + '\n' not in stopWords and ammount == 0:
+        if i + '\n' not in stopWords:
             for count in words:
                 if i == count:
                     ammount +=1
             my_dict[i] = ammount           
         else:
-            continue 
-                
+            continue                 
     return my_dict
 print(countWords(tokens, stopWords))
