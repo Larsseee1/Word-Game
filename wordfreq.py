@@ -33,7 +33,7 @@ def countWords(words, stopWords):
     for i in words:
         ammount = 0
         for o in stopWords:
-            if i not in stopWords and ammount == 0:
+            if i + '\n' not in stopWords and ammount == 0:
                 for count in words:
                     if i == count:
                         ammount +=1
