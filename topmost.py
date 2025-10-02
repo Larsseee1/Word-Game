@@ -4,13 +4,12 @@ import urllib.request
 
 def main():
     lines_list = []
-    if sys.argv[2][0] == 'h' and sys.argv[2][1] == 't' and sys.argv[2][2] == 't' and sys.argv[2][3] == 'p':
+    if sys.argv[2].startswith('http'):
         response = urllib.request.urlopen(sys.argv[2])
         url_lines_list = response.read().decode("utf8").splitlines()
         for lines in url_lines_list:
             lines_list.append(lines)
              
-    
         
             
     else:
